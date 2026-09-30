@@ -1,0 +1,370 @@
+{
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "triton": "3.6.0",
+  "problems": {
+    "add_layernorm": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.0650240033864975,
+        "compile_ms": 0.03753599897027016
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 0.8155840039253235,
+        "compile_ms": 0.39816001057624817
+      },
+      "large": {
+        "shape": {
+          "M": 16384,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 6.4245758056640625,
+        "compile_ms": 3.3935680389404297
+      }
+    },
+    "attention": {
+      "small": {
+        "shape": {
+          "B": 1,
+          "H": 4,
+          "S": 256,
+          "D": 64
+        },
+        "dtype": "float16",
+        "eager_ms": 0.028672000393271446,
+        "compile_ms": 0.025248000398278236
+      },
+      "medium": {
+        "shape": {
+          "B": 4,
+          "H": 8,
+          "S": 1024,
+          "D": 64
+        },
+        "dtype": "float16",
+        "eager_ms": 0.7067840099334717,
+        "compile_ms": 0.659248024225235
+      },
+      "large": {
+        "shape": {
+          "B": 8,
+          "H": 16,
+          "S": 2048,
+          "D": 64
+        },
+        "dtype": "float16",
+        "eager_ms": 11.827312469482422,
+        "compile_ms": 11.77732801437378
+      }
+    },
+    "bias_gelu_residual": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.05484800040721893,
+        "compile_ms": 0.029839999973773956
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 1.0281760096549988,
+        "compile_ms": 0.39235201478004456
+      },
+      "large": {
+        "shape": {
+          "M": 8192,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 4.236735820770264,
+        "compile_ms": 1.5540639758110046
+      }
+    },
+    "gelu": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.02252800017595291,
+        "compile_ms": 0.022431999444961548
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 0.2864319980144501,
+        "compile_ms": 0.2762400060892105
+      },
+      "large": {
+        "shape": {
+          "M": 8192,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 1.1117119789123535,
+        "compile_ms": 1.1403359770774841
+      }
+    },
+    "layernorm": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.024671999737620354,
+        "compile_ms": 0.02252800017595291
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 0.3839679956436157,
+        "compile_ms": 0.2764799892902374
+      },
+      "large": {
+        "shape": {
+          "M": 16384,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 3.2317440509796143,
+        "compile_ms": 2.2411359548568726
+      }
+    },
+    "logsumexp": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.055296000093221664,
+        "compile_ms": 0.01571200042963028
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 1.8819360136985779,
+        "compile_ms": 0.2887359857559204
+      },
+      "large": {
+        "shape": {
+          "M": 16384,
+          "N": 16384
+        },
+        "dtype": "float16",
+        "eager_ms": 15.0414719581604,
+        "compile_ms": 2.9369919300079346
+      }
+    },
+    "matmul_bias_relu": {
+      "small": {
+        "shape": {
+          "M": 512,
+          "N": 512,
+          "K": 512
+        },
+        "dtype": "float16",
+        "eager_ms": 0.02956799976527691,
+        "compile_ms": 0.02377600036561489
+      },
+      "medium": {
+        "shape": {
+          "M": 2048,
+          "N": 2048,
+          "K": 2048
+        },
+        "dtype": "float16",
+        "eager_ms": 0.7952960133552551,
+        "compile_ms": 0.7019519805908203
+      },
+      "large": {
+        "shape": {
+          "M": 4096,
+          "N": 4096,
+          "K": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 8.559552192687988,
+        "compile_ms": 7.830703973770142
+      }
+    },
+    "rmsnorm": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.07583999633789062,
+        "compile_ms": 0.02175999991595745
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 1.1673599481582642,
+        "compile_ms": 0.2768639922142029
+      },
+      "large": {
+        "shape": {
+          "M": 16384,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 10.382111549377441,
+        "compile_ms": 2.2201919555664062
+      }
+    },
+    "rope": {
+      "small": {
+        "shape": {
+          "B": 1,
+          "S": 512,
+          "H": 8,
+          "D": 64
+        },
+        "dtype": "float16",
+        "eager_ms": 0.029152000322937965,
+        "compile_ms": 0.00979200005531311
+      },
+      "medium": {
+        "shape": {
+          "B": 4,
+          "S": 2048,
+          "H": 16,
+          "D": 128
+        },
+        "dtype": "float16",
+        "eager_ms": 1.5660479664802551,
+        "compile_ms": 0.2908160090446472
+      },
+      "large": {
+        "shape": {
+          "B": 8,
+          "S": 4096,
+          "H": 32,
+          "D": 128
+        },
+        "dtype": "float16",
+        "eager_ms": 13.364352226257324,
+        "compile_ms": 2.870944023132324
+      }
+    },
+    "silu_mul": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 2048
+        },
+        "dtype": "float16",
+        "eager_ms": 0.0944959968328476,
+        "compile_ms": 0.05748800002038479
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 11008
+        },
+        "dtype": "float16",
+        "eager_ms": 1.8358399868011475,
+        "compile_ms": 1.0377919673919678
+      },
+      "large": {
+        "shape": {
+          "M": 8192,
+          "N": 14336
+        },
+        "dtype": "float16",
+        "eager_ms": 4.731055974960327,
+        "compile_ms": 2.694943904876709
+      }
+    },
+    "softmax": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.02380800060927868,
+        "compile_ms": 0.02252800017595291
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 0.4833280146121979,
+        "compile_ms": 0.3543039858341217
+      },
+      "large": {
+        "shape": {
+          "M": 8192,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 1.9030400514602661,
+        "compile_ms": 1.5113600492477417
+      }
+    },
+    "transpose": {
+      "small": {
+        "shape": {
+          "M": 1024,
+          "N": 1024
+        },
+        "dtype": "float16",
+        "eager_ms": 0.054496001452207565,
+        "compile_ms": 0.02271999977529049
+      },
+      "medium": {
+        "shape": {
+          "M": 4096,
+          "N": 4096
+        },
+        "dtype": "float16",
+        "eager_ms": 0.9130240082740784,
+        "compile_ms": 0.40374399721622467
+      },
+      "large": {
+        "shape": {
+          "M": 8192,
+          "N": 8192
+        },
+        "dtype": "float16",
+        "eager_ms": 4.0161439180374146,
+        "compile_ms": 1.726415991783142
+      }
+    }
+  }
+}

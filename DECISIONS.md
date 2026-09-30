@@ -44,3 +44,6 @@ Choices made where the spec was ambiguous. Simpler option picked each time.
   the agent from crashes/hangs/CUDA-context corruption. Static import checks block
   os/subprocess etc., which is enough for LLM-written code on a throwaway Colab VM.
 - **Bandwidth = minimum bytes (read each input once + write output once) / time.**
+- **Baselines are committed** (`results/baselines.json`, measured on the Colab T4) so
+  every later phase compares against the same numbers. `load_baselines()` ignores the
+  file if the current GPU differs, and `python -m harness.baselines` re-measures.
