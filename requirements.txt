@@ -1,0 +1,7 @@
+# torch and triton are intentionally NOT listed: use the versions preinstalled on the
+# GPU machine (Colab), which are built to match its CUDA driver. See DECISIONS.md.
+anthropic
+pytest
+matplotlib
+pandas
+tabulate
